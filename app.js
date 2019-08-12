@@ -16,12 +16,22 @@ const addbook = () => {
     remover.addEventListener('click', () => {
         book.remove();
     });
-
+    read.addEventListener(
+        'click',
+        () => {
+            if (read.textContent == "X") {
+                read.textContent = "O"
+            } else {
+                read.textContent = "X"
+            }
+        }
+    )
     const list = document.querySelector(".list");
     title.textContent = document.getElementById("title").value;
     author.textContent = document.getElementById("author").value;
     pages.textContent = document.getElementById("pages").value;
-    if (document.getElementById("pages").value == 1) {
+
+    if (document.getElementById("read").checked == true) {
         read.textContent = "O";
     } else {
         read.textContent = "X";
